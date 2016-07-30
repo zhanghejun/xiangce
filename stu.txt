@@ -1,0 +1,19 @@
+可编辑表格
+Query
+ $con=new mysqli("localhost","root","","stu");
+ $sql="SELECT * FORM stu";
+ $res=$con->query($sql);
+ 返回结果集中行的数量
+ $len=mysqli_num_rows();
+ 从结果集中取得一行作为关联数组
+ $arr[$i]=mysqli_fetch_assoc($res);
+ $aa=json_encode($arr);
+ echo $aa;
+Update
+ $sql="UPDATE stu SET {$type}='{$val} ' WHERE id={$ids}"
+Delete
+ $sql="DELETE FORM stu WHERE id  in $(ids)";
+Add
+ $sql="INSERT INTO stu (`name`,`age`,`sex`) VALUES ('{}','{}',{})";
+ $res=$mysql->query($sql);
+ $id=mysqli_insert_id($res);
